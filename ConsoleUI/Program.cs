@@ -11,18 +11,14 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-
-            ICarDal carDal = new EfCarDal();
-            CarManager carManager = new CarManager(carDal);
-
-
-            var result = carManager.GetCarDetails();
-
-            if(result.Success == true)
+            ICustomerDal customerDal = new EfCustomerDal();
+            CustomerManager customerManager = new CustomerManager(customerDal);
+            var result = customerManager.GetCustomerDetail();
+            if (result.Success)
             {
-                foreach (var car in result.Data)
+                foreach (var customer in result.Data)
                 {
-                    Console.WriteLine(car.CarName + "/" + car.BrandName + "/" + car.ColorName + "/" + car.DailyPrice);
+                    Console.WriteLine(customer.FirstName + " " + customer.LastName + " - " + customer.CompanyName);
                 }
             }
             else
@@ -30,7 +26,10 @@ namespace ConsoleUI
                 Console.WriteLine(result.Message);
             }
 
+
             
+
+
 
 
 
