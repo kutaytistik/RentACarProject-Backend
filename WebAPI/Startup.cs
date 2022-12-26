@@ -29,25 +29,8 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Senin bir IoC yapýn var biliyorum onu kullanma ama ben kendi IoC yapým var onu kullan
             services.AddControllers();
-            services.AddSingleton<ICarService, CarManager>();
-            services.AddSingleton<ICarDal, EfCarDal>();
-
-            
-            services.AddTransient<IBrandService, BrandManager>();
-            services.AddTransient<IBrandDal, EfBrandDal>();
-
-            services.AddTransient<IColorService, ColorManager>();
-            services.AddTransient<IColorDal, EfColorDal>();
-
-            services.AddTransient<ICustomerService, CustomerManager>();
-            services.AddTransient<ICustomerDal, EfCustomerDal>();
-
-            services.AddTransient<IRentalService, RentalManager>();
-            services.AddTransient<IRentalDal, EfRentalDal>();
-
-            services.AddTransient<IUserService, UserManager>();
-            services.AddTransient<IUserDal,EfUserDal>();
 
         }
 
