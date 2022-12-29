@@ -6,10 +6,8 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Brand : IEntity
+    public class Payment : IEntity
     {
-        public int BrandId { get; set; }
-        public string BrandName { get; set; }
-
+        public decimal Amount { get; set; }
     }
 }

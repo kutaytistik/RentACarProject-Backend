@@ -1,12 +1,9 @@
 ﻿using Core.Entities;
 using Core.Entities.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class User : IEntity
+    public class UserForUpdateDto : IDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
