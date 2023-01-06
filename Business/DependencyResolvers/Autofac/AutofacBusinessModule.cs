@@ -16,8 +16,12 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //birisi senden ICarService isterse CarManager instance ver
-            //SingleInstance 
+            //web api deki startup karşılığı
+            //.net'e ben senin ıoc yapını değil AutofacBusinessModule yapımı kullanacağımı belirtmen lazım
+            //WebAPI---->Program.cs
+            //birisi senden ICarService isterse CarManager instance'ı ver
+            //SingleInstance : Tek bir instance oluşturur
+
             builder.RegisterType<CarManager>().As<ICarService>().SingleInstance();
             builder.RegisterType<EfCarDal>().As<ICarDal>().SingleInstance();
 
@@ -36,8 +40,7 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
 
-            builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
-            builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
+           
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
