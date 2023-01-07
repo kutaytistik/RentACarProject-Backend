@@ -51,15 +51,13 @@ namespace Business.DependencyResolvers.Autofac
                     Selector = new AspectInterceptorSelector()
                 }).SingleInstance();
 
+
+
             //InstancePerHttpRequest--------->Her ayrı web isteği için hizmetimizin tek bir örneğini alır 
             //InstancePerApiRequest--------->Her ayrı web isteği için hizmetimizin tek bir örneğini alır 
             //InstancePerLifetimeScope
             //SingleInstance
             //.......
-
-
-
-
 
         }
     }
