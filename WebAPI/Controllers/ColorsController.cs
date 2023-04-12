@@ -17,6 +17,7 @@ namespace WebAPI.Controllers
         public ColorsController(IColorService colorService)
         {
             _colorService = colorService;
+
         }
 
         [HttpGet("getall")]
